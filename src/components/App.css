@@ -1,0 +1,119 @@
+.app {
+  width: 90%;
+  min-height: 100vh;
+  max-width: 50rem;
+  margin: 0 auto;
+  background: rgb(0, 7, 45);
+  color: #eee;
+}
+
+ul{
+  list-style: none;
+}
+
+
+.header{
+  text-align: center;
+  padding: 2em 0;
+}
+
+.header h1{
+  font-size: 2.5rem;
+  color: rgba(21, 243, 225, 0.918);
+}
+
+.header p{
+  opacity: .5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.form__label{
+  font-size: 1.1rem;
+  margin-bottom: .5em;
+  display: block;
+  opacity: .9;
+}
+
+.form__input{
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  padding: .7em 1em;
+  margin-bottom: .7em;
+  color: rgb(0, 7, 45);
+  border-radius: .2em;
+}
+
+.form__input::placeholder{
+  font-style: italic;
+}
+
+.form__choices{
+  margin-top: 1.2em;
+}
+
+.form__buttons{
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: .5em 1em;
+  font-size: 1rem;
+  background: none;
+  border: 1px solid rgba(21, 243, 225, 0.918);
+  color: rgba(21, 243, 225, 0.918);
+  text-transform: uppercase;
+  border-radius: .2em;
+  cursor: pointer;
+}
+
+.primary {
+  background: rgba(21, 243, 225, 0.918);
+  color: rgb(0, 7, 45);
+}
+
+@media (max-width: 424px){
+  .btn{
+    font-size: .8rem;
+  }
+}
+
+.answer{
+  width: 20rem;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.answer h2{
+  font-size: 2rem;
+  margin-bottom: .5em;
+}
+
+.answer li {
+  font-size: 1.5rem;
+  margin-bottom: .5em;
+  opacity: .8;
+}
+
+.answer .btn{
+  margin-top: 1em;
+}
+
+.choice{
+  color: rgba(21, 243, 225, 0.918);
+  opacity: 1;
+}
+
+
