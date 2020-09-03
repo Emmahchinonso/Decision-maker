@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Form from "./Form";
 import Answer from "./Answer";
+import PopularQuestions from './PopularQuestions';
 
 const initialChoices = [
 	{ value: "", number: 1 },
@@ -15,19 +16,24 @@ const resetChoices = (choices) => {
 	return choices.map((choice) => ({ ...choice, value: "" }));
 };
 
+const isChoicesEmpty = (choices) => {
+  return choices.some(choice => choice.value === "");
+}
+
 function App() {
 	const [viewAnswer, setViewAnswer] = useState(false);
 	const [choices, setChoices] = useState(initialChoices);
   const [question, setQuestion] = useState("");
   const [questionHistory, setQuestionHistory] = useState([]);
+  console.log(questionHistory)
 
 	const handleQuestionChange = (e) => {
-		setQuestion(e.target.value);
+		setQuestion(e.target.value.trim());
 	};
 
 	const handleChoiceChange = (value, index) => {
 		let newChoices = choices.map((choice) => {
-			if (choice.number === index) return { ...choice, value: value };
+			if (choice.number === index) return { ...choice, value: value.trim() };
 			return choice;
 		});
 		setChoices(newChoices);
@@ -39,8 +45,12 @@ function App() {
 	};
 
 	const handleAnswerClick = () => {
-    setViewAnswer(true);
-    setQuestionHistory(questionHistory.concat(question));
+    if(isChoicesEmpty(choices) && question){
+      setViewAnswer(true);
+      setQuestionHistory(questionHistory.concat(question));
+    }else{
+      alert('Please fill in all empty fields');
+    }
 	};
 
 	const resetState = () => {
@@ -70,8 +80,10 @@ function App() {
 					handleAddClick={handleAddClick}
 				/>
 			)}
+      <PopularQuestions questionHistory={questionHistory}/>
 		</article>
 	);
 }
 
 export default App;
+
