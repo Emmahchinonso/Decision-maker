@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Form from "./Form";
 import Answer from "./Answer";
-import PopularQuestions from './PopularQuestions';
+import PopularQuestions from "./PopularQuestions";
 
 const initialChoices = [
 	{ value: "", number: 1 },
@@ -17,15 +17,15 @@ const resetChoices = (choices) => {
 };
 
 const isChoicesEmpty = (choices) => {
-  return choices.some(choice => choice.value === "");
-}
+	return choices.some((choice) => choice.value === "");
+};
 
 function App() {
 	const [viewAnswer, setViewAnswer] = useState(false);
 	const [choices, setChoices] = useState(initialChoices);
-  const [question, setQuestion] = useState("");
-  const [questionHistory, setQuestionHistory] = useState([]);
-  console.log(questionHistory)
+	const [question, setQuestion] = useState("");
+	const [questionHistory, setQuestionHistory] = useState([]);
+	console.log(questionHistory);
 
 	const handleQuestionChange = (e) => {
 		setQuestion(e.target.value.trim());
@@ -45,20 +45,18 @@ function App() {
 	};
 
 	const handleAnswerClick = () => {
-    if(isChoicesEmpty(choices) && question){
-      setViewAnswer(true);
-      setQuestionHistory(questionHistory.concat(question));
-    }else{
-      alert('Please fill in all empty fields');
-    }
+		if (isChoicesEmpty(choices) && question) {
+			setViewAnswer(true);
+			setQuestionHistory(questionHistory.concat(question));
+		} else {
+			alert("Please fill in all empty fields");
+		}
 	};
 
 	const resetState = () => {
 		setQuestion("");
 		setChoices(resetChoices(choices));
-  };
-  
-
+	};
 
 	return (
 		<article className="app">
@@ -67,8 +65,8 @@ function App() {
 				<Answer
 					question={question}
 					choices={choices}
-          setViewAnswer={setViewAnswer}
-          resetState={resetState}
+					setViewAnswer={setViewAnswer}
+					resetState={resetState}
 				/>
 			) : (
 				<Form
@@ -80,10 +78,9 @@ function App() {
 					handleAddClick={handleAddClick}
 				/>
 			)}
-      <PopularQuestions questionHistory={questionHistory}/>
+			<PopularQuestions questionHistory={questionHistory} />
 		</article>
 	);
 }
 
 export default App;
-

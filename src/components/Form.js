@@ -6,9 +6,9 @@ const Form = ({
 	question,
 	handleQuestionChange,
 	choices,
-  handleChoiceChange,
-  handleAddClick,
-  handleAnswerClick
+	handleChoiceChange,
+	handleAddClick,
+	handleAnswerClick,
 }) => {
 	return (
 		<form className="form">
@@ -18,8 +18,8 @@ const Form = ({
 					value={question}
 					id="question"
 					className="form__input"
-          onChange={handleQuestionChange}
-          placeholder="e.g What course do i study"
+					onChange={handleQuestionChange}
+					placeholder="e.g What course do i study"
 				/>
 			</div>
 			<div className="form__choices">
@@ -34,8 +34,8 @@ const Form = ({
 				))}
 			</div>
 			<div className="form__buttons">
-				<Button content="Add new choice" handleClick={handleAddClick}/>
-				<Button primary content="Get Answer" handleClick={handleAnswerClick}/>
+				<Button content="Add new choice" handleClick={handleAddClick} />
+				<Button primary content="Get Answer" handleClick={handleAnswerClick} />
 			</div>
 		</form>
 	);

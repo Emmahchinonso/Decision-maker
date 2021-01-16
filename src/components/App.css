@@ -2,8 +2,8 @@
 	width: 90%;
 	min-height: 100vh;
 	max-width: 50rem;
-  margin: 0 auto;
-  padding-bottom: 1em;
+	margin: 0 auto;
+	padding-bottom: 1em;
 	background: rgb(3, 11, 54);
 	color: #eee;
 }
@@ -57,7 +57,6 @@ ul {
 
 .form__input::placeholder {
 	font-style: italic;
-	
 }
 
 .form__choices {
@@ -69,14 +68,14 @@ ul {
 	display: flex;
 	justify-content: space-between;
 }
-@media(max-width: 348px){
-  .form__buttons{
-    flex-direction: column;
-  }
+@media (max-width: 348px) {
+	.form__buttons {
+		flex-direction: column;
+	}
 
-  .form__buttons .primary{
-    margin-top: .5em;
-  }
+	.form__buttons .primary {
+		margin-top: 0.5em;
+	}
 }
 
 .btn {
@@ -135,11 +134,9 @@ ul {
 
 .popular-question {
 	display: grid;
-  place-items: center;
-  margin-top: 1em;
-  
+	place-items: center;
+	margin-top: 1em;
 }
-
 
 .popular-question__text {
 	background: rgba(255, 255, 255, 0.87);
